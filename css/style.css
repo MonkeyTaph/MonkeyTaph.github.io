@@ -3,6 +3,7 @@ html * {
 	box-sizing: border-box;
 	margin: 0 2em 0 2em;
 	padding: 0;
+	background-color: #FFFAFA;
 }
 
 /* Header */
@@ -28,4 +29,10 @@ header ul li a {
   color: #fff;
   font: lighter;
 	font-size: 0.8em;
+}
+
+/*Body*/
+body {
+	background-color: #fff;
+	z-index: 0;
 }

@@ -20,6 +20,11 @@ body {
 	background-color: #708090;
 }
 
+/*Top bar*/
+#topbar {
+	height: 78px;	
+}
+
 /*Header Menu*/
 #topmenu {
 	display: block;

@@ -1,5 +1,12 @@
+html,
+html * {
+	box-sizing: border-box;
+	margin: 0 2em 0 2em;
+	padding: 0;
+}
+
 /* Header */
-#header {
+header {
 position: absolute;
   width: 100%;
   padding: 8px;
@@ -7,15 +14,15 @@ position: absolute;
   background-color: #708090;
 }
 
-#header ul li {
-  float: right;
+header ul li {
+	float: right;
 	text-align: center;
 	padding-left: 1.5em;
 	letter-spacing: 2px;
 	transition: all 0.3s linear; 
 }
 
-#header ul li a {
+header ul li a {
   text-decoration: none;
   text-transform: uppercase;
   color: #fff;

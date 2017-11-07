@@ -334,23 +334,23 @@ form {
 	margin-left: 7%;
 }
 
-.submit_button {
+input[type=submit] {
 	width: 30%;
 	margin: 20px 35% 0;
 	font-family: "Bebas Neue";
 	text-align: center;
 	font-size: 25px;
 	text-transform: uppercase;
-	height: 40px;
+	height: 55px;
 	color: #4F4F4F;
-	background-color: none;
+	background-color: #fff;
 	border: 4px solid #4F4F4F;
-	padding: 9px 5px 0;
+	padding: 0px 5px 0;
 	cursor: pointer;
 	transition: all 0.1s linear;
 }
 
-.submit_button:hover {
+input[type=submit]:hover {
 	width: 40%;
 	margin: 20px 30% 0;
 	box-shadow: 0px 0px 1px 0 #000;
@@ -380,21 +380,22 @@ input[type=text], input[type=email]{
 }
 
 .form_item_question {
-	vertical-align: top;
 	margin-top: -465px;
 	padding-left: 10px;
 	width: 43%;
 	float: right;
 }
 
-input[type=question] {
+textarea {
 	width: 100%;
+	box-sizing: border-box;
+	resize: none;
 	border-radius: 2px;
 	border: 3px solid #ADADAD;
 	height: 400px;
 	color: #4F4F4F;
-	padding: 0 20px;
-	margin: 0;
+	padding: 20px 20px 0;
+	margin: 10px 0 0 0 ;
 	font-size: 16px;
 	transition: all 0.1s linear;
 	font-family: "Century Gothic";
@@ -415,5 +416,57 @@ select[name=topic] {
 
 input[type=text]:focus, input[type=email]:focus, input[type=question]:focus {
     border: 3px solid #555;
+}
+
+/*About*/
+.text_column {
+	width: 25%;
+	display: inline-block;
+	height: auto;
+	color: #4F4F4F;
+	font-family: "Arial";
+	font-weight: lighter;
+	font-size: 16px;
+	vertical-align:top;
+	text-align: justify;
+    -moz-text-align-last: center;
+    text-align-last: center;
+	padding-bottom: 10px;
+}
+
+.text_column h2 {
+	font-family: "Bebas Neue";
+	font-size: 30px;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+.text_column h3 {
+	font-size: 18px;
+	padding-top: 10px;
+	margin-top: 0;
+	font-style: italic;
+	font-family: "Century Gothic";
+	font-weight: lighter;
+}
+
+.text_column p {
+	padding-top: 10px;
+}
+
+.block {
+	display: block;
+	height: auto;
+}
+
+.profile_picture {
+	text-align: center;
+	border-radius: 100%;
+	margin-bottom: 40px;
+	margin-top: 20px;
+	width: 200px;
+	height: 200px;
+	background-size: cover;
+	background-position: center center;
 }
 

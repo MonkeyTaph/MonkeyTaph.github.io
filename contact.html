@@ -6,16 +6,37 @@
 	<meta name="Description" content="Goldcrest Games is a small game studio located in Groningen, The Netherlands. Their current project is F3R0T, a battle royale with an aztec twist.">
 	<title>Contact Us</title>
 	<link href="stylesheet.css" rel="stylesheet" type="text/css">
-	
+	<script>
+		function validateForm()
+		{
+			if (document.forms["myForm"]["fname"].value==null || document.forms["myForm"]["fname"].value=="") {
+				alert("First name must be filled out");
+				return false;
+			}
+			if (document.forms["myForm"]["lname"].value==null || document.forms["myForm"]["lname"].value=="") {
+				alert("Last name must be filled out");
+				return false;
+			}
+			if (document.forms["myForm"]["email"].value==null || document.forms["myForm"]["email"].value=="") {
+				alert("Email must be filled out");
+				return false;
+			}
+			if (document.forms["myForm"]["question"].value==null || document.forms["myForm"]["question"].value=="") {
+				alert("Question must be filled out");
+				return false;
+			}
+		return true;
+		}
+	</script>
 </head>
 
 <body>
 	<header>
-		<a href="./index.html"><h4 class="home">Home</h4></a>
+		<a href="./index.html"><h4 class="home">Goldcrest Games</h4></a>
 		<nav>
 		  <ul>
-		  	<li><a href="./games.html">Games</a></li>
-			<li><a href="./about.html">Team</a></li>
+		  	<li><a href="./about.html">About</a></li>
+			<li><a href="./games.html">Games</a></li>
 			<li><a href="./contact.html"><font color="#fff">Contact</font></a></li>
 		  </ul>
 		</nav>
@@ -23,14 +44,14 @@
 	
 	<div class="page_banner" style="background: url(./images/ContactUs_Banner.jpg); background-position: center center; background-size: cover;">
 		<div class ="page_banner_text">
-			<h1>"We usually answer between of 1 to 365 days."</h1>
+			<h1>"We usually answer between 1 to 365 days."</h1>
 		</div>
 	</div>
 	
 	<wrap>
 		<div class = "headline"><h1>Contact Us</h1></div>
 		
-		<form>
+		<form name="myForm" onsubmit="return validateForm()" >
 			<div class = "form_item"> Topic <br>
 			<select name="topic">
 				<option>General</option>
@@ -43,9 +64,9 @@
 			<div class = "form_item"> First name<br><input type="text" name="fname"></div>
 			<div class = "form_item"> Last name <br><input type="text" name="lname"></div>
 			<div class = "form_item"> E-mail <br><input type="email" name="email"></div>
-			<div class = "form_item_question">Question <br> <input type="question" name="question" style="margin-top: 7px"></div>
+			<div class = "form_item_question">Question<br><textarea type="question" name="question"></textarea></div>
 			
-			<input type="submit" value="Submit" class="submit_button" style="height: 55px; vertical-alignment: middle; background-color: #fff; padding-top: 0;">
+			<input type="submit" value="Submit">
 		</form>
 		
 	</wrap>

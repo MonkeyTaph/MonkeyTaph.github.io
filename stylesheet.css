@@ -146,7 +146,7 @@ ul li:hover a, .home:hover {
 	font-size: 22px;
 }
 
-/*Games*/
+/*Non-front pages*/
 wrap {
 	width: 98%;
 	margin: 0 1%;
@@ -159,7 +159,7 @@ wrap {
 wrap h1 {
 	color: #4F4F4F;
 	width: 90%;
-	margin: 40px 5% 0;
+	margin: 40px 5% 40px;
 	padding-bottom: 5px;
 	border-bottom: 10px double #4F4F4F;
 	font-size: 50px;
@@ -168,6 +168,29 @@ wrap h1 {
 	text-align: left;
 }
 
+.page_banner {
+	background-size: cover;
+	min-height: 650px;
+	background-position: bottom center;
+	width: 100%;
+	background-repeat: no-repeat;
+}
+
+.page_banner_text {
+	width: auto;
+	font-family: "Bebas Neue";
+	max-width: 400px;
+	font-weight: lighter;
+	height: 300px;
+	top: 150px;
+	right: 150px;
+	text-shadow: 0px 0px 8px #0F0F0F;
+	text-align: right;
+	position: absolute;
+	display: inline-block;
+}
+
+/*Games*/
 table {
 	width: 90%;
 	margin: 50px 5% 0;
@@ -236,25 +259,161 @@ td {
 	font-size: 16px;
 }
 
-.page_banner {
-	background: linear-gradient(to right, rgba(255,255,255,0.00) 0%, rgba(0,0,0,0.5) 100%), url("./images/Games_Banner.jpg");
-	background-size: cover;
-	min-height: 650px;
-	background-position: bottom center;
-	width: 100%;
-	background-repeat: no-repeat;
+table {
+	width: 90%;
+	margin: 50px 5% 0;
+	height: 400px;
+	text-align: justify;
+    -moz-text-align-last: center;
+    text-align-last: center;
+	color: #4F4F4F;
 }
 
-.page_banner_text {
-	width: auto;
-	font-family: "Bebas Neue";
-	max-width: 400px;
-	font-weight: lighter;
-	height: 300px;
-	top: 150px;
-	right: 150px;
-	text-shadow: 0px 0px 8px #0F0F0F;
-	text-align: right;
-	position: absolute;
-	display: inline-block;
+td {
+	width: 33%;
+	padding: 0 1%;
 }
+
+.td_description {
+	width: 80%;
+	min-width: 150px;
+	margin: 0 10%;
+}
+
+.td_button:hover {
+	width: 60%;
+	box-shadow: 0px 0px 1px 0 #000;
+}
+
+.game_thumbnail {
+	width: 100%;
+	border-radius: 4px;
+	box-shadow: 0px 0px 1px 0 #000;
+	height: 250px;
+	background-size: cover;
+	background-position: center center;
+}
+
+.game_title {
+	font-size: 30px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-weight: bold;
+}
+
+.game_description {
+	font-family: "Arial";
+	font-weight: lighter;
+	height: 100px;
+	font-size: 16px;
+}
+
+.td_button{
+	min-width: 100px;
+	width: 40%;
+	display: inline-block;
+	font-family: "Bebas Neue";
+	text-align: center;
+	font-size: 25px;
+	text-transform: uppercase;
+	height: 40px;
+	margin: 10px;
+	color: #4F4F4F;
+	background-color: none;
+	border: 4px solid #4F4F4F;
+	padding: 9px 5px 0;
+	cursor: pointer;
+	transition: all 0.1s linear;
+}
+
+/*Contact*/
+form {
+	color: #4F4F4F;
+	width: 50%;
+	margin-left: 7%;
+}
+
+.submit_button {
+	width: 30%;
+	margin: 20px 35% 0;
+	font-family: "Bebas Neue";
+	text-align: center;
+	font-size: 25px;
+	text-transform: uppercase;
+	height: 40px;
+	color: #4F4F4F;
+	background-color: none;
+	border: 4px solid #4F4F4F;
+	padding: 9px 5px 0;
+	cursor: pointer;
+	transition: all 0.1s linear;
+}
+
+.submit_button:hover {
+	width: 40%;
+	margin: 20px 30% 0;
+	box-shadow: 0px 0px 1px 0 #000;
+}
+
+.form_item, .form_item_question {
+	padding-bottom: 20px;
+	font-size: 25px;
+	font-family: "Bebas Neue";
+}
+
+.form_item {
+	width: 50%;
+}
+
+input[type=text], input[type=email]{
+	width: 100%;
+	border-radius: 2px;
+	border: 3px solid #ADADAD;
+	height: 20px;
+	color: #4F4F4F;
+	padding: 12px 0px 12px 20px;
+	margin: 8px 0;
+	font-size: 16px;
+	transition: all 0.1s linear;
+	font-family: "Century Gothic";
+}
+
+.form_item_question {
+	vertical-align: top;
+	margin-top: -465px;
+	padding-left: 10px;
+	width: 43%;
+	float: right;
+}
+
+input[type=question] {
+	width: 100%;
+	border-radius: 2px;
+	border: 3px solid #ADADAD;
+	height: 400px;
+	color: #4F4F4F;
+	padding: 0 20px;
+	margin: 0;
+	font-size: 16px;
+	transition: all 0.1s linear;
+	font-family: "Century Gothic";
+}
+
+select[name=topic] {
+	width: 100%;
+	border-radius: 2px;
+	border: 3px solid #ADADAD;
+	height: 50px;
+	color: #4F4F4F;
+	font-size: 16px;
+	font-family: "Century Gothic";
+	padding: 12px 0px 12px 20px;
+	margin: 8px 0;
+	transition: all 0.1s linear;
+}
+
+input[type=text]:focus, input[type=email]:focus, input[type=question]:focus {
+    border: 3px solid #555;
+}
+

@@ -1,0 +1,142 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	width: 100%;
+	background-color: #252525;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	font-family: "Century Gothic";
+	color: #fff;
+}
+
+/*Header and navigation*/
+header {
+	width: 100%;
+	height: 55px;
+	padding: 0px;
+	z-index: 5;
+	border-bottom: 1px solid rgba(252,252,252,0.05);
+	position: fixed;
+	background-color: rgba(252,252,252,0.1);
+}
+
+.home {
+	font-weight: bold;
+	display: inline-block;
+	text-align: undefined;
+	float: left;
+	color: #E1E1E1;
+	font-size: 20px;
+	margin-top: 15px;
+	margin-left: 25px;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	text-decoration: none !important;
+	list-style: none;
+	transition: all 0.1s linear;
+}
+
+nav {
+	float: right;
+}
+
+nav ul li {
+	float: left;
+	display: inline-block;
+	font-size: 15px;
+	text-align: left;
+	margin-right: 25px;
+	letter-spacing: 2px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+ul li a {
+	color: #E1E1E1;
+	text-decoration: none;
+	transition: all 0.1s linear;
+}
+ul li:hover a, .home:hover {
+	color: #fff;
+}
+
+/*Front Page*/
+.frontpage_banner {
+	background: linear-gradient(to right, rgba(255,255,255,0.00) 0%, rgba(0,0,0,0.5) 100%), url("./images/F3R0T.png");
+	background-size: cover;
+	min-height: 47.2em;
+	background-position: center center;
+	width: 100%;
+	background-repeat: no-repeat;
+}
+
+.frontpage_banner_text {
+	right: 150px;
+	position: absolute;
+	top: 20%;
+	display: table-cell;
+	align-content: center;
+	width: 30%;
+	height: auto;
+	text-align: center;
+	text-shadow: 0px 0px 8px #0F0F0F;
+}
+
+.frontpage_banner_text h1 {
+	font-size: 100px;
+	margin-top: 10px;
+	margin-bottom: 40px;
+	text-transform: uppercase;
+}
+
+.frontpage_banner_text h2 {
+	font-size: 20px;
+	margin-top: 0;
+	font-weight: light;
+	padding-bottom: 3em;
+}
+
+.frontpage_banner_text h3 {
+	font-style: italic;
+	margin-bottom: 0;
+	text-transform: uppercase;
+}
+
+
+.frontpage_button {
+	display: inline-block;
+	border: 5px solid #CFCFCF;
+	vertical-align: middle;
+	height: 60px;
+	width: 200px;
+	text-shadow: 0px 0px 8px #0F0F0F;
+	background-color: rgba(193,193,193, 0.3);
+	transition: all 0.1s linear;
+}
+
+.frontpage_button:hover {
+	border: 5px solid white;
+	height: 70px;
+	width: 210px;
+	margin-top: -5px;
+	cursor: pointer;
+}
+
+.frontpage_button p, .frontpage_button a {
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-decoration: none;
+	font-weight: bolder; 
+	color: #E1E1E1;
+	text-shadow: 0px 0px 8px #0F0F0F;
+	transition: all 0.1s linear;
+}
+
+.frontpage_button:hover a, .frontpage_button:hover p{
+	color: #fff;
+	text-decoration: none;
+	font-size: 22px;
+}

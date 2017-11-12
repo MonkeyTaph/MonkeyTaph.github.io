@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="Keywords" content="goldcrest, games, studio, f3r0t, dookie, disaster, indie, industry, game, evalien, wiersma, bas, altenburg, justin, geschiere, programming, internship, company, art, battle, royale">
 	<meta name="Description" content="Goldcrest Games is a small game studio located in Groningen, The Netherlands. Their current project is F3R0T, a battle royale with an aztec twist.">
 	<title>Contact Us</title>
@@ -27,7 +28,74 @@
 			}
 		return true;
 		}
+		
+		//Getting the location
+		function myMap() {
+			var myCenter = new google.maps.LatLng(53.2194,6.5665);
+  			var mapCanvas = document.getElementById("myMap");
+  			var mapOptions = {center: myCenter, zoom: 12};
+  			var map = new google.maps.Map(mapCanvas, mapOptions);
+  			var marker = new google.maps.Marker({position:myCenter});
+  			marker.setMap(map);
+		}
+		
+		
+		
+		$(function () {
+			var dropZoneId = "drop-zone";
+			var buttonId = "clickHere";
+			var mouseOverClass = "mouse-over";
+
+			var dropZone = $("#" + dropZoneId);
+			var ooleft = dropZone.offset().left;
+			var ooright = dropZone.outerWidth() + ooleft;
+			var ootop = dropZone.offset().top;
+			var oobottom = dropZone.outerHeight() + ootop;
+			var inputFile = dropZone.find("input");
+			document.getElementById(dropZoneId).addEventListener("dragover", function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				dropZone.addClass(mouseOverClass);
+				var x = e.pageX;
+				var y = e.pageY;
+
+				if (!(x < ooleft || x > ooright || y < ootop || y > oobottom)) {
+					inputFile.offset({ top: y - 15, left: x - 100 });
+				} else {
+					inputFile.offset({ top: -400, left: -400 });
+				}
+
+			}, true);
+
+			if (buttonId != "") {
+				var clickZone = $("#" + buttonId);
+
+				var oleft = clickZone.offset().left;
+				var oright = clickZone.outerWidth() + oleft;
+				var otop = clickZone.offset().top;
+				var obottom = clickZone.outerHeight() + otop;
+
+				$("#" + buttonId).mousemove(function (e) {
+					var x = e.pageX;
+					var y = e.pageY;
+					if (!(x < oleft || x > oright || y < otop || y > obottom)) {
+						inputFile.offset({ top: y - 15, left: x - 160 });
+					} else {
+						inputFile.offset({ top: -400, left: -400 });
+					}
+				});
+			}
+
+			document.getElementById(dropZoneId).addEventListener("drop", function (e) {
+				$("#" + dropZoneId).removeClass(mouseOverClass);
+			}, true);
+
+		})
+		
 	</script>
+	
+	
+	
 </head>
 
 <body>
@@ -49,26 +117,68 @@
 	</div>
 	
 	<wrap>
-		<div class = "headline"><h1>Contact Us</h1></div>
-		
-		<form name="myForm" onsubmit="return validateForm()" >
-			<div class = "form_item"> Topic <br>
-			<select name="topic">
-				<option>General</option>
-				<option>Technical Problems</option>
-				<option>Press</option>
-				<option>Internship</option>
-				<option>Miscellaneous</option>
-			</select> </div>
+		<div class="block" style="background-color: white; padding-bottom: 30px;">
+			<div class = "headline"><h1>Contact Us</h1></div>
+			<form name="myForm" onsubmit="return validateForm()" >
+				<div class = "form_item"> Topic <br>
+				<select name="topic">
+					<option>General</option>
+					<option>Technical Problems</option>
+					<option>Press</option>
+					<option>Internship</option>
+					<option>Miscellaneous</option>
+				</select> </div>
+
+				<div class = "form_item"> First name<br><input type="text" name="fname"></div>
+				<div class = "form_item"> Last name <br><input type="text" name="lname"></div>
+				<div class = "form_item"> E-mail <br><input type="email" name="email"></div>
+				<div class = "form_item_question">Question<br><textarea type="question" name="question"></textarea>
+				
+				<!-- drop the files in this input --> 
+				<div class = "form_file_upload" style= "padding-top: 20px"> Upload file <br><input type="file" multiple method="POST"></div>
+					
+				</div>
+							
+				<input type="submit" value="Submit">
+			</form>
 			
-			<div class = "form_item"> First name<br><input type="text" name="fname"></div>
-			<div class = "form_item"> Last name <br><input type="text" name="lname"></div>
-			<div class = "form_item"> E-mail <br><input type="email" name="email"></div>
-			<div class = "form_item_question">Question<br><textarea type="question" name="question"></textarea></div>
-			
-			<input type="submit" value="Submit">
-		</form>
-		
+			<!--Depending on whether or not the user gives permission to show their location, this map either shows the directions to our office or just a map of our location-->
+			<div class = "contact_block">
+				<div class="map" id="myMap"></div>
+				<script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyBsmVgU4MULx-a98wbXnSzlaW0-VIZBtaE &callback=myMap"></script>
+				<div class = "contact_info">
+					<p style="Color: black">Balistraat 3 <br> 9715 CT Groningen <br> +31 6 143 257 76 <br> info@goldcrestgames.com</p>
+				</div>
+			</div>
+		</div>
+	
+    <script>
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('myMap'), {
+          center: {lat: 53.2194, lng:6.5665},
+          zoom: 12
+        });
+
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, map.getCenter());
+          });
+        } else {
+          handleLocationError(false, map.getCenter());
+        }
+      }
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsmVgU4MULx-a98wbXnSzlaW0-VIZBtaE&callback=initMap">
+    </script>
 	</wrap>
 	
 </body>

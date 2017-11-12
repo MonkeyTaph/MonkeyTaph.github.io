@@ -27,9 +27,9 @@ header {
 	height: 55px;
 	padding: 0px;
 	z-index: 5;
-	border-bottom: 1px solid rgba(252,252,252,0.05);
+	border-bottom: 1px solid rgba(252,252,252,0.1);
 	position: fixed;
-	background-color: rgba(252,252,252,0.1);
+	background-color: rgba(0,0,0,0.1);
 }
 
 .home {
@@ -43,6 +43,7 @@ header {
 	margin-left: 25px;
 	text-transform: uppercase;
 	letter-spacing: 4px;
+	text-shadow: 0px 0px 8px #0F0F0F;
 	text-decoration: none !important;
 	list-style: none;
 	transition: all 0.1s linear;
@@ -65,6 +66,7 @@ nav ul li {
 
 ul li a {
 	color: #E1E1E1;
+	text-shadow: 0px 0px 8px #0F0F0F;
 	text-decoration: none;
 	transition: all 0.1s linear;
 }
@@ -330,12 +332,13 @@ td {
 /*Contact*/
 form {
 	color: #4F4F4F;
-	width: 50%;
+	width: 60%;
 	margin-left: 7%;
 }
 
 input[type=submit] {
 	width: 30%;
+	min-width: 100px;
 	margin: 20px 35% 0;
 	font-family: "Bebas Neue";
 	text-align: center;
@@ -352,6 +355,7 @@ input[type=submit] {
 
 input[type=submit]:hover {
 	width: 40%;
+	min-width: 150px;
 	margin: 20px 30% 0;
 	box-shadow: 0px 0px 1px 0 #000;
 }
@@ -364,6 +368,13 @@ input[type=submit]:hover {
 
 .form_item {
 	width: 50%;
+}
+
+input[type=file] {
+	width: 100%;
+	height: 90px;
+	border-radius: 2px;
+	border: 3px solid #ADADAD;
 }
 
 input[type=text], input[type=email]{
@@ -392,7 +403,7 @@ textarea {
 	resize: none;
 	border-radius: 2px;
 	border: 3px solid #ADADAD;
-	height: 400px;
+	height: 250px;
 	color: #4F4F4F;
 	padding: 20px 20px 0;
 	margin: 10px 0 0 0 ;
@@ -416,6 +427,34 @@ select[name=topic] {
 
 input[type=text]:focus, input[type=email]:focus, input[type=question]:focus {
     border: 3px solid #555;
+}
+
+.contact_block {
+	display: inline-block;
+	float: right;
+	margin-top: -500px;
+	margin-right: 100px;
+	background-color: #F5F5F5;
+	box-shadow: 0px 0px 1px 0 #000;
+	width: 24%;
+	height: 400px;
+}
+
+.contact_info {
+	text-align: center;
+	height: 100px;
+	font-size: 16px;
+	padding-top: 10px;
+}
+
+#drop_zone {
+  border: 5px solid blue;
+  width:  200px;
+  height: 100px;
+}
+
+.map {
+	height: 250px;
 }
 
 /*About*/
@@ -484,7 +523,7 @@ input[type=text]:focus, input[type=email]:focus, input[type=question]:focus {
 }
 
 .head_display h1, h2, h5 {
-	font-size: 150px;
+	font-size: 10vw;
 	text-align: center;
 	margin-top: 0;
 	padding-top: 1.5em;
@@ -525,9 +564,106 @@ input[type=text]:focus, input[type=email]:focus, input[type=question]:focus {
 	padding-bottom: 10px;
 }
 
-@media only screen and (min-width: 47.2em) {
-	.frontpage_banner {
-			
-	}
+iframe {
+	width: 640.5px;
+	height: 360px;
 }
 
+@media only screen and (max-width: 800px) {
+	.head_display h1{
+		padding-top: 250px;
+		padding-bottom: 60px;
+	}
+	
+	.text_column {
+		width: 80%;
+	}
+	
+	.frontpage_banner_text {
+		padding: 150px 100px 0;
+		right: 0;
+		left:0;
+		position: relative;
+		top: 20%;
+		display: table-cell;
+		align-content: center;
+		height: auto;
+		text-align: center;
+		text-shadow: 0px 0px 8px #0F0F0F;
+	}
+	
+	.page_banner_text {
+		width: 100%;
+		font-family: "Bebas Neue";
+		max-width: none;
+		font-weight: lighter;
+		height: 300px;
+		padding-top: 100px;
+		top: 150px;
+		right: 0;
+		left: 0;
+		text-shadow: 0px 0px 8px #0F0F0F;
+		text-align: center;
+		position: relative;
+		display: inline-block;
+	}
+	
+	.page_banner_text h1 {
+		font-size: 8vw;
+		margin-top: 0px;
+		padding-left: 100px;
+		padding-right: 100px;
+	}
+	
+	.text_column_left {
+		width: 100%;
+		right: 0;
+		left: 0;
+		display: inline-block;
+		height: auto;
+		color: #4F4F4F;
+		font-family: "Arial";
+		font-weight: lighter;
+		font-size: 16px;
+		vertical-align:top;
+		text-align: justify;
+		-moz-text-align-last: center;
+		text-align-last: center;
+		padding-bottom: 10px;
+	}
+	
+	iframe {
+		width: 80vw;
+		height: 50vw;
+	}
+	
+	form {
+		width: 80%;
+	}
+	
+	.form_item {
+		width: 100%;
+	}
+	
+	.form_file_upload, .form_item_question {
+		width: 100%;
+		margin-top: 0px;
+		padding-left: 10px;
+		float: right;
+	}
+	
+	.contact_block {
+		display: inline-block;
+		float: none;
+		left: 0;
+		right: 0;
+		margin-top: 40px;
+		margin-right: 5%;
+		margin-left: 5%;
+		background-color: #F5F5F5;
+		box-shadow: 0px 0px 1px 0 #000;
+		width: 90%;
+		height: 400px;
+	}
+	
+}

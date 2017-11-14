@@ -329,6 +329,44 @@ td {
 	transition: all 0.1s linear;
 }
 
+/*Game-specific pages*/
+.game_images {
+	height: auto;
+	width: 100%;
+	display: inline-block;
+}
+
+.big_display {
+	height: 390px;
+	width: 100%;
+	display: inline-block;
+	background-size: cover;
+	padding: 10px;
+}
+
+.big_display img {
+	height: 390px;
+	width: auto;
+	border-radius: 5px;
+}
+
+.game_thumbnails_slideshow {
+	width: 100%;
+	height: 130px;
+	padding: 5px;
+	display: inline-block;
+}
+
+.game_thumbnails {
+	width: 130px;
+	display: inline-block;
+	margin: 0 5px;
+	height: 130px;
+	background-size: cover;
+	background-position: center center;
+	border-radius: 10px;
+}
+
 /*Contact*/
 form {
 	color: #4F4F4F;

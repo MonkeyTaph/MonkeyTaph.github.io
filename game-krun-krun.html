@@ -49,16 +49,55 @@
 		<div class="block" style="background-color: #F5F5F5; padding: 20px 0 100px 0;">
 			<div class = "headline"><h1>Gallery</h1></div>
 			<div class = "container" align="center">
-				<div class="text_column_left" style="min-height: 365px; margin-right: 50px">
-	  			<p>"This is where the image descriptions come"</p>
-					<audio controls>
+				<div class="game_images" style="width: 90%;"  align="center">
+					<div class="my_slides"><img src="./images/krunkrun/Screenshot_01.PNG" alt="test"></div>
+					<div class="my_slides"><img src="./images/krunkrun/Screenshot_02.PNG" alt="test"></div>
+					<div class="my_slides"><img src="./images/krunkrun/Screenshot_03.PNG" alt="test"></div>
+					<div class="my_slides"><img src="./images/krunkrun/Screenshot_04.PNG" alt="test"></div>
+					<div class="my_slides"><img src="./images/krunkrun/Screenshot_05.PNG" alt="test"></div>
+					
+					<div class="game_thumbnails_slideshow">
+						<div class="game_thumbnails" style="background-image: url(./images/krunkrun/Screenshot_01.PNG)" onclick="currentDiv(1)"></div>
+						<div class="game_thumbnails" style="background-image: url(./images/krunkrun/Screenshot_02.PNG)" onclick="currentDiv(2)"></div>
+						<div class="game_thumbnails" style="background-image: url(./images/krunkrun/Screenshot_03.PNG)" onclick="currentDiv(3)"></div>
+						<div class="game_thumbnails" style="background-image: url(./images/krunkrun/Screenshot_04.jpg)" onclick="currentDiv(3)"></div>
+						<div class="game_thumbnails" style="background-image: url(./images/krunkrun/Screenshot_05.jpg)" onclick="currentDiv(3)"></div>
+					</div>
+				</div>
+	  		</div>
+		</div>
+		
+		<script>
+			var slideIndex = 1;
+			showDivs(slideIndex);
+
+			function plusDivs(n) {
+			  showDivs(slideIndex += n);
+			}
+
+			function currentDiv(n) {
+			  showDivs(slideIndex = n);
+			}
+
+			function showDivs(n) {
+			  var i;
+			  var x = document.getElementsByClassName("my_slides");
+			  if (n > x.length) {slideIndex = 1}
+			  if (n < 1) {slideIndex = x.length}
+			  for (i = 0; i < x.length; i++) {
+				 x[i].style.display = "none";
+			  }
+			  x[slideIndex-1].style.display = "inline-block";
+			}
+		</script>
+		
+		<div class="block" style="background-color: #fff; padding: 20px 0 100px 0;">
+			<div class = "headline"><h1>Audio and Other Media</h1></div>
+			<div class = "container" align="center">
+				<audio controls>
 					<source src="./images/KrunKrun_MainTheme.wav" type="audio/wav">
 					Something went wrong with the audio.
 				</audio>
-	  			</div>
-				<div class="text_column_left" style="min-height: 365px; margin-right: 50px">
-	  			<p>"Gallery comes here"</p>
-	  			</div>
 			</div>
 		</div>
 	</wrap>

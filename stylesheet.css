@@ -74,6 +74,43 @@ ul li:hover a, .home:hover {
 	color: #fff;
 }
 
+footer { 
+	margin: 0;
+	width: 100%;
+	height: auto;
+	display: inline-block;
+	background-color: #333333;
+	color: #A7A7A7;
+}
+
+.text_column_footer {
+	width: 33%;
+	padding-bottom: 20px;
+	margin: 0;
+	float: left;
+	display: inline-block;
+	height: auto;
+}
+
+.text_column_footer h5, .text_column_footer h6 {
+	font-weight: bold;
+	margin-bottom: 0;
+	font-size: 15px;
+	text-shadow: none;
+	color: #A7A7A7;
+}
+
+.text_column_footer p, .text_column_footer a {
+	font-size: 12px;
+	color: #A7A7A7;
+	text-decoration: none;
+}
+
+.text_column_footer a:hover p:hover, .text_column_footer h6:hover{
+	color: #fff;
+	text-decoration: none;
+}
+
 /*Front Page*/
 .frontpage_banner {
 	width: 100%;
@@ -196,7 +233,7 @@ wrap h1 {
 table {
 	width: 90%;
 	margin: 50px 5% 0;
-	height: 400px;
+	height: auto;
 	text-align: justify;
     -moz-text-align-last: center;
     text-align-last: center;
@@ -603,7 +640,7 @@ input[type=text]:focus, input[type=email]:focus, input[type=question]:focus {
 	background-position: center;
 }
 
-.head_display h1, h2, h5 {
+.head_display h1, h2, h5, h6 {
 	font-size: 10vw;
 	text-align: center;
 	margin-top: 0;
